@@ -13,8 +13,9 @@ class Server:
     def run(self) -> None:
         self.tcp_ser_sock.bind((self.ip, self.port))
         self.tcp_ser_sock.listen(self.max_listen_val)
-        
+      
         tcp_cli_sock, addr = self.tcp_ser_sock.accept()
+        print(f"{addr} has connected")
 
         file_name = tcp_cli_sock.recv(self.buff_size).decode()
         print(file_name)
