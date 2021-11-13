@@ -1,5 +1,5 @@
 from socket import *
-import os
+
 
 class Client:
     def __init__(self) -> None:
@@ -7,6 +7,7 @@ class Client:
         self.port = 3000
         self.buff_size = 1024
         self.tcp_cli_sock = socket(AF_INET, SOCK_STREAM)
+    
     
     def run(self) -> None:
         while True:
@@ -17,12 +18,13 @@ class Client:
                 self.send_file(file_name)
             elif cmd == 'close':
                 break
-        
+
         self.tcp_cli_sock.close()
 
-        
+
     def connect_port(self) -> None:
-        self.tcp_cli_sock.connect((self.ip,self.port))
+        self.tcp_cli_sock.connect((self.ip, self.port))
+
 
     def send_file(self, file_name: str):
         self.tcp_cli_sock.send(file_name.encode())
