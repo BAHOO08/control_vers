@@ -1,4 +1,4 @@
-from socket import *
+import socket 
 
 
 class Server:
@@ -6,14 +6,13 @@ class Server:
         self.ip = 'localhost'
         self.port = 3000
         self.buff_size = 1024
-        self.tcp_ser_sock = socket(AF_INET, SOCK_STREAM)
+        self.tcp_ser_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.max_listen_val = 5
 
 
     def run(self) -> None:
         self.tcp_ser_sock.bind((self.ip, self.port))
         self.tcp_ser_sock.listen(self.max_listen_val)
-      
         tcp_cli_sock, addr = self.tcp_ser_sock.accept()
         print(f"{addr} has connected")
 
