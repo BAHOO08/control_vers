@@ -3,12 +3,12 @@ from socket import *
 
 class Client:
     def __init__(self) -> None:
-        self.ip = 'localhost'
+        self.ip = '192.168.0.182'
         self.port = 3000
         self.buff_size = 1024
         self.tcp_cli_sock = socket(AF_INET, SOCK_STREAM)
     
-    
+
     def run(self) -> None:
         while True:
             cmd = input('Get command: ')

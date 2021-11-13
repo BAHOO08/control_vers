@@ -3,7 +3,7 @@ from _thread import start_new_thread
 
 class Server:
     def __init__(self) -> None:
-        self.ip = 'localhost'
+        self.ip = '192.168.0.182'
         self.port = 3000
         self.buff_size = 1024
         self.tcp_ser_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
