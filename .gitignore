@@ -5,3 +5,6 @@
 #
 .vscode
 server_files/*
+__pycache__/*
+*.db
+test.py
